@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "270288df-e087-4692-8934-4c7174a6cc6c",
+		"name": "Products Test task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44708629"
+	},
+	"item": [
+		{
+			"name": "Fetch Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}products",
+					"host": [
+						"{{baseURL}}products"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Headphones",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "stock.price:asc",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "Wooden",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"AirPods Pro Max Wireless Headphones6\",\n    \"manufacturer\":\"Apple\",\n    \"stock\":[{\n        \"color\":\"Space Grey\",\n        \"stock\": 10,\n        \"price\":1,\n        \"image\":\"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop\"\n    },{\n        \"color\":\"Silver\",\n        \"stock\": 80,\n        \"price\":2,\n        \"image\":\"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop\"\n    }],\n    \"isShippingFree\":true,\n    \"discountPercentage\":18,\n    \"warrantyYear\":2,\n    \"rating\":4.2,\n    \"category\":\"Wooden\",\n    \"isPremiumQuality\":true,\n    \"keyFeatures\":[\"Active Noise Cancellation\", \"Spatial Audio\", \"20h Battery\", \"Premium Materials\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}products",
+					"host": [
+						"{{baseURL}}products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"AirPods Pro Max Wireless Headphones\",\n    \"manufacturer\":\"Apple\",\n    \"stock\":[{\n        \"color\":\"Space Grey2\",\n        \"stock\": 10,\n        \"price\":250,\n        \"image\":[\"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop\"]\n    },{\n        \"color\":\"Silver\",\n        \"stock\": 80,\n        \"price\":240,\n        \"image\":[\"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop\"]\n    }],\n    \"isShippingFree\":true,\n    \"discountPercentage\":18,\n    \"warrantyYear\":2,\n    \"rating\":4.2,\n    \"category\":\"Electronics\",\n    \"isPremiumQuality\":true,\n    \"keyFeatures\":[\"Active Noise Cancellation\", \"Spatial Audio\", \"20h Battery\", \"Premium Materials\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}products/686cdf81fec02013c368152b",
+					"host": [
+						"{{baseURL}}products"
+					],
+					"path": [
+						"686cdf81fec02013c368152b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}products/686cdf81fec02013c368152b",
+					"host": [
+						"{{baseURL}}products"
+					],
+					"path": [
+						"686cdf81fec02013c368152b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

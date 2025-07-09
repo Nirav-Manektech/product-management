@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "name": "makanify-backend",
+      "script": "./dist/index.js",
+      "node_args": "--enable-source-maps",
+      "interpreter": "node",
+      "instances": 1,
+      "autorestart": true,
+      "watch": false,
+      "time": true,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
