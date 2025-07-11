@@ -18,7 +18,6 @@ const app: Express = express();
 // app.use(helmet());
 
 app.use(cors());
-app.options(/^.*$/, cors());
 
 // parse json request body
 app.use(express.json());
