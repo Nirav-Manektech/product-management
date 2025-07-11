@@ -21,6 +21,7 @@ const productSchema = new Schema<IProductDoc>(
       },
     ],
     isShippingFree: { type: Boolean, default: false },
+    description: { type: String, required: true, trim: true },
     discountPercentage: { type: Number, default: 0 },
     warrantyYear: { type: Number, default: 0 },
     rating: { type: Number, default: 0 },
