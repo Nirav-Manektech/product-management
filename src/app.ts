@@ -17,7 +17,9 @@ const app: Express = express();
 // set security HTTP headers
 // app.use(helmet());
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://incredible-shortbread-0fe296.netlify.app'
+}));
 
 // parse json request body
 app.use(express.json());
