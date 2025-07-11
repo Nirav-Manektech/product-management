@@ -19,10 +19,12 @@ const app: Express = express();
 
 app.use(cors({
   origin: 'https://incredible-shortbread-0fe296.netlify.app',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true, // only if you're using cookies/auth
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors());
 
 // parse json request body
 app.use(express.json());
